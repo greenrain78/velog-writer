@@ -39,7 +39,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+
     steps:
+      - name: run test
+        run: |
+          ls
+
       - name: run main
         run: |
           python main.py
