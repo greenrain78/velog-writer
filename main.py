@@ -13,7 +13,8 @@ async def run():
     async with RetryClient(retry_options=retry_options, headers=headers) as session:
         username = "greenrain"
         data = await get_post_by_username(session=session, username=username)
-        for i in data.get('data').get('posts'):
+        for i in data.get('posts'):
+            print(i)
         # post = data.get('data').get('posts')[0]
         # print(post)
         # print()
@@ -26,7 +27,7 @@ async def run():
 
         # data = await edit_post(session=session, post_id=post_id, title=title, body=body, tags=tags)
         # print(data)
-    print('123')
+    print('end')
 
 
 if __name__ == '__main__':
